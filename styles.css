@@ -112,8 +112,79 @@ img:not([src])::before {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.nav-link-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-link-with-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link-with-icon:hover .nav-icon {
+    transform: scale(1.1);
+}
+
+.nav-link-with-icon:hover .ham1 {
+    transform: rotate(45deg);
+}
+
+.nav-link-with-icon:hover .ham2 .top {
+    stroke-dashoffset: -102px;
+}
+
+.nav-link-with-icon:hover .ham2 .bottom {
+    stroke-dashoffset: -102px;
+}
+
+.nav-link-with-icon:hover .ham4 .top {
+    stroke-dashoffset: -68px;
+}
+
+.nav-link-with-icon:hover .ham4 .bottom {
+    stroke-dashoffset: -68px;
+}
+
+.nav-link-with-icon:hover .ham5 .top {
+    stroke-dasharray: 14 82;
+    stroke-dashoffset: -72px;
+}
+
+.nav-link-with-icon:hover .ham5 .bottom {
+    stroke-dasharray: 14 82;
+    stroke-dashoffset: -72px;
+}
+
+.nav-link-with-icon:hover .ham6 .top {
+    stroke-dashoffset: -132px;
+}
+
+.nav-link-with-icon:hover .ham6 .middle {
+    stroke-dashoffset: -71px;
+}
+
+.nav-link-with-icon:hover .ham6 .bottom {
+    stroke-dashoffset: -132px;
 }
 
 .nav-links a:hover {
@@ -419,6 +490,41 @@ img:not([src])::before {
     gap: clamp(8px, 1.5vw, 10px);
     letter-spacing: 0.02em;
     min-height: 44px; /* Minimum touch target size */
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover .btn-icon {
+    transform: scale(1.1);
+}
+
+.btn:hover .ham7 .top {
+    stroke-dasharray: 17 82;
+    stroke-dashoffset: -62px;
+}
+
+.btn:hover .ham7 .middle {
+    stroke-dashoffset: 23px;
+}
+
+.btn:hover .ham7 .bottom {
+    stroke-dashoffset: -83px;
+}
+
+.btn:hover .ham8 .top {
+    stroke-dashoffset: -64px;
+}
+
+.btn:hover .ham8 .middle {
+    transform: rotate(90deg);
+}
+
+.btn:hover .ham8 .bottom {
+    stroke-dashoffset: -64px;
 }
 
 .btn-primary {
@@ -1496,6 +1602,255 @@ img:not([src])::before {
 html {
     scroll-behavior: smooth;
 }
+
+/* Animated Hamburger Menu Icons */
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 40px;
+    height: 40px;
+}
+
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+
+.ham .line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #fff;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+/* Ham1 Animation */
+.ham1 .top {
+    stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+    stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+    stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+    stroke-dashoffset: -138px;
+}
+
+/* Ham2 Animation */
+.ham2 .top {
+    stroke-dasharray: 40 121;
+}
+
+.ham2 .bottom {
+    stroke-dasharray: 40 121;
+}
+
+.ham2.active .top {
+    stroke-dashoffset: -102px;
+}
+
+.ham2.active .bottom {
+    stroke-dashoffset: -102px;
+}
+
+/* Ham3 Animation */
+.ham3 .top {
+    stroke-dasharray: 40 130;
+}
+
+.ham3 .middle {
+    stroke-dasharray: 40 140;
+}
+
+.ham3 .bottom {
+    stroke-dasharray: 40 205;
+}
+
+.ham3.active .top {
+    stroke-dasharray: 75 130;
+    stroke-dashoffset: -63px;
+}
+
+.ham3.active .middle {
+    stroke-dashoffset: -102px;
+}
+
+.ham3.active .bottom {
+    stroke-dasharray: 110 205;
+    stroke-dashoffset: -86px;
+}
+
+/* Ham4 Animation */
+.ham4 .top {
+    stroke-dasharray: 40 121;
+}
+
+.ham4 .bottom {
+    stroke-dasharray: 40 121;
+}
+
+.ham4.active .top {
+    stroke-dashoffset: -68px;
+}
+
+.ham4.active .bottom {
+    stroke-dashoffset: -68px;
+}
+
+/* Ham5 Animation */
+.ham5 .top {
+    stroke-dasharray: 40 82;
+}
+
+.ham5 .bottom {
+    stroke-dasharray: 40 82;
+}
+
+.ham5.active .top {
+    stroke-dasharray: 14 82;
+    stroke-dashoffset: -72px;
+}
+
+.ham5.active .bottom {
+    stroke-dasharray: 14 82;
+    stroke-dashoffset: -72px;
+}
+
+/* Ham6 Animation */
+.ham6 .top {
+    stroke-dasharray: 40 172;
+}
+
+.ham6 .middle {
+    stroke-dasharray: 40 111;
+}
+
+.ham6 .bottom {
+    stroke-dasharray: 40 172;
+}
+
+.ham6.active .top {
+    stroke-dashoffset: -132px;
+}
+
+.ham6.active .middle {
+    stroke-dashoffset: -71px;
+}
+
+.ham6.active .bottom {
+    stroke-dashoffset: -132px;
+}
+
+/* Ham7 Animation */
+.ham7 .top {
+    stroke-dasharray: 40 82;
+}
+
+.ham7 .middle {
+    stroke-dasharray: 40 111;
+}
+
+.ham7 .bottom {
+    stroke-dasharray: 40 161;
+}
+
+.ham7.active .top {
+    stroke-dasharray: 17 82;
+    stroke-dashoffset: -62px;
+}
+
+.ham7.active .middle {
+    stroke-dashoffset: 23px;
+}
+
+.ham7.active .bottom {
+    stroke-dashoffset: -83px;
+}
+
+/* Ham8 Animation */
+.ham8 .top {
+    stroke-dasharray: 40 160;
+}
+
+.ham8 .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+}
+
+.ham8 .bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+}
+
+.ham8.active .top {
+    stroke-dashoffset: -64px;
+}
+
+.ham8.active .middle {
+    transform: rotate(90deg);
+}
+
+.ham8.active .bottom {
+    stroke-dashoffset: -64px;
+}
+
+/* Hamburger Menu Container */
+.hamburger-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hamburger-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.hamburger-demo h4 {
+    color: #fff;
+    font-size: 0.9rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Special colored hamburgers for different sections */
+.ham-primary .line {
+    stroke: #d32f2f;
+}
+
+.ham-secondary .line {
+    stroke: #ffc107;
+}
+
+.ham-white .line {
+    stroke: #fff;
+}
+
+.ham-dark .line {
+    stroke: #333;
+}
+
 
 /* Loading Animation */
 .hero-content {

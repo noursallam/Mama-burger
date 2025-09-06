@@ -1,10 +1,24 @@
 // Mobile Menu Toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navLinks = document.querySelector('.nav-links');
+const hamburgerIcon = document.querySelector('.mobile-menu-toggle .ham');
 
-mobileMenuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    mobileMenuToggle.classList.toggle('active');
+// Handle hamburger menu toggle
+if (hamburgerIcon) {
+    hamburgerIcon.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburgerIcon.classList.toggle('active');
+    });
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        if (hamburgerIcon) {
+            hamburgerIcon.classList.remove('active');
+        }
+    });
 });
 
 // Smooth Scrolling for Navigation Links
